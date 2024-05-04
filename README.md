@@ -24,3 +24,7 @@ Assuming FLASH has been installed, follow the steps to configure, compile, and r
   -  ./setup mdotwd -2d +cartesian -auto -with-unit=physics/Gravity/GravityMain/Roche -maxblocks=3000
   - make -j 4
   -  ./FLASH
+
+<img width="731" alt="roche" src="https://github.com/ianpaga/mdotwd/assets/57350668/b356a297-8bda-4e07-a894-3585f308741a">
+![initialconditionDDgrid_Slice_z_density](https://github.com/ianpaga/mdotwd/assets/57350668/941d789b-ae79-4417-a892-dbfcb087b06f)
+![DDzoomed_Slice_z_density](https://github.com/ianpaga/mdotwd/assets/57350668/198d935e-7e8c-4a81-826f-c2e64a0c71fe)
