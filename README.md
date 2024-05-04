@@ -9,9 +9,7 @@
   2. To use the gravity unit, put it in source/Gravity/GravityMain/Roche
   3. After initial calculations, the code dumps some useful parameters in the files
    
-  - rho.par - Stores some results from the Lane-Emden solver.
-  - initial_don_profile.dat - Saves the donor profile.
-  - initial_acc_profile.dat - Saves the accretor profile.
+ ![DWD1-ezgif com-video-to-gif-converter](https://github.com/ianpaga/mdotwd/assets/57350668/7f6e663c-e2f9-446a-a0cb-82f1e05926e0)
 
 ## Requirements:
 
