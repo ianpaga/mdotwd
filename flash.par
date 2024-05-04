@@ -1,0 +1,183 @@
+# Relevant variables
+
+mass1 = 1.2
+mass2 = 0.9
+npoly = 1.5
+x1    = 0.0
+x2    = 1.0
+
+# Simulation flags
+useMassShl = .true.
+BdryLocDon = 0.8
+useBdryDon = .true.
+fillDon    = .true.
+BdryLocAcc = 0.8 
+useBdryAcc = .true.
+useNStrAcc = .false.
+fillAcc    = .true.
+
+# Gravity flags for Roche unit
+useGravity     = .true.
+useCentrifugal = .true.
+useCoriolis    = .true.
+useMass1       = .true.
+useMass2       = .true.
+
+
+# Cooling stuff
+useCool = .true.
+dradmin = 1.0E14
+dradmax = 1.0E23
+tradmin = 5.0E4
+tradmax = 1.0E10
+
+# Refinement
+lrefine_max  = 5
+lrefine_min  = 1
+refine_var_1 = "pres"
+refine_var_2 = "dens"
+refine_var_3 = "bdry"
+refine_var_4 = "none"
+
+# names of files
+basenm   = "wdwd_"
+log_file = "wdwd.log"
+
+# for starting a new run
+restart  = .false.
+checkdon_FileNumber = 0
+plotFileNumber = 0
+# for restarting an old one
+#restart  = .true.
+#checkdon_FileNumber = 63
+#plotFileNumber = 125
+
+# specify the plot variables
+plot_var_1 = "dens"
+plot_var_2 = "pres"
+plot_var_3 = "temp"
+plot_var_4 = "velx"
+plot_var_5 = "vely"
+plot_var_6 = "velz"
+plot_var_7 = "bdry"
+
+# dump checkdon_ files every checkdon_FileIntervalTime seconds
+checkdon_FileIntervalTime   = 1000.
+#checkdon_FileIntervalStep   = 10
+
+# dump plot files every plotFileIntervalTime seconds
+plotFileIntervalTime    = 0.2
+#plotFileIntervalStep    = 1
+
+# go for nend steps or tmax seconds, whichever comes first
+nend          = 100000
+tmax          = 60.
+
+# This is for James' relaxation routine
+sim_trelax    = 5.0
+sim_relaxrate = 0.9
+sim_relax     = .true.
+
+# initial and minimum 
+dtinit = 1.0e-16
+dtmin = 1.0e-20
+
+# for fine time slices, you may want to limit the timestep
+#dtmax = 0.0125e-9
+
+
+# cfl limit, ni56 burner cutoff, artificial viscosity, smallest density
+# allowed, and smallest temperature allowed
+cfl = .25
+nuclearNI56Max = 1.0
+
+smallX = 0.001
+smlrho = 1.e-15
+smallt = 1.e2
+
+# control when the burner is called, dont call it in the cold stuff
+nuclearTempMin = 2.1e8
+nuclearTempMax = 1.0e14 
+nuclearDensMin = 1.0e-10
+nuclearDensMax = 1.0e14
+
+# Physical Domain in Cartesian
+xmin = -2.5e9
+xmax =  2.5e9
+ymin = -2.5e9
+ymax =  2.5e9
+zmin =  0.0
+zmax =  2.5e9
+
+
+# Blocks at lrefine = 1
+nblockx = 4
+nblocky = 4
+nblockz = 1
+
+# cartesian geometry
+geometry = "cartesian"
+
+# reflecting east and west boundaries
+xl_boundary_type = "outflow"
+xr_boundary_type = "outflow"
+
+# periodix north and south boundaries
+yl_boundary_type = "outflow"
+yr_boundary_type = "outflow"
+
+# periodic up and down boundaries
+zl_boundary_type = "outflow"
+zr_boundary_type = "outflow"
+
+
+# use these
+# useGravity   = .true.
+useBurn      = .false.
+useShockBurn = .false.
+
+# eos options
+#eos_tolerance = 1.e-8
+#eos_maxnewton = 10000
+eintSwitch     = 1.e-4
+#eos_coulombMult = 0
+eosmode = dens_ie
+eosmodeinit =dens_pres
+
+#Riemann Solver Tolerance
+rieman_tol = 1.e-10
+
+
+## -------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE UNSPLIT HYDRO SOLVER               ##
+#	I. INTERPOLATION SCHEME:
+#order		= 2      # Interpolation order (first/second/third/fifth order)
+#slopeLimiter    = "mc"   # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+#LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+#charLimiting	= .true. # Characteristic limiting vs. Primitive limiting
+
+#use_avisc	= .false. # use artificial viscosity (originally for PPM)
+#cvisc		= 0.1     # coefficient for artificial viscosity
+#use_flattening	= .false. # use flattening (dissipative) (originally for PPM)
+#use_steepening	= .false. # use contact steepening (originally for PPM)
+#use_upwindTVD	= .false. # use upwind biased TVD slope for PPM (need nguard=6)
+
+#	II. RIEMANN SOLVERS:
+#RiemannSolver	= "Roe"       # Roe, HLL, HLLC, LLF, Marquina
+#entropy         = .false.     # Entropy fix for the Roe solver
+
+
+#	III. STRONG SHOCK HANDELING SCHEME:
+#shockDetect	= .false.     # Shock Detect for numerical stability
+## -------------------------------------------------------------##
+
+## ---------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE SUPER-TIME-STEPPING (STS) ALGORITHM  ##
+##  NOTE: For details on using STS runtime parameters, please     ##
+##        refer to user's guide (Driver chapter).                 ##
+useSTS                  = .false.
+nstepTotalSTS           = 5
+nuSTS                   = 0.2
+## ---------------------------------------------------------------##
+
+
